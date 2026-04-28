@@ -15,6 +15,7 @@ import ProjectModal from "@/components/ProjectModal";
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [cvOpen, setCvOpen] = useState(false);
 
   const handleOpenProject = (project: Project) => {
     setSelectedProject(project);
@@ -30,17 +31,12 @@ export default function Home() {
 
       {/* 3D Background Wrapper - Fixed behind everything */}
       <div className="fixed inset-0 z-0 opacity-20 pointer-events-none">
-          {/* Note: If ParticleWave is expensive, consider only rendering it on desktop or simplifying */}
-         {/* <Scene><ParticleWave /></Scene> -> We will keep it inside Hero for now or move it here if we want global background */}
-          {/* Keeping it simple for now, relying on Hero's background or moving global background here? 
-             Let's keep Hero's background inside Hero but maybe we want a global one? 
-             Actually, let's leave simple background color for now as defined in globals.css */}
       </div>
 
       <div className="max-w-[100vw] mx-auto px-2 py-4 md:px-6 lg:p-6 grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-10 relative z-10">
           
-          {/* Left Column: Sticky Sidebar */}
-          <div className="lg:col-span-3 xl:col-span-3 relative z-30">
+          {/* Left Column: Sticky Sidebar — hidden when CV is open */}
+          <div className={`lg:col-span-3 xl:col-span-3 relative z-30 transition-all duration-500 ${cvOpen ? "opacity-0 pointer-events-none -translate-x-8" : "opacity-100 translate-x-0"}`}>
               <div className="relative lg:sticky lg:top-6 lg:max-h-[calc(100vh-3rem)]">
                 <Sidebar />
               </div>
@@ -53,7 +49,7 @@ export default function Home() {
               </section>
               <Projects onProjectClick={handleOpenProject} />
               <section id="about">
-                <About />
+                <About cvOpen={cvOpen} setCvOpen={setCvOpen} />
               </section>
               <Services />
               <section id="experience">

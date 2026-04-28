@@ -63,21 +63,21 @@ const workExperience = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-10 md:py-20 relative z-10 px-6 md:px-6">
+    <section id="experience" className="py-6 md:py-20 relative z-10 px-3 md:px-6">
       <div className="max-w-6xl mx-auto">
         <PopIn>
         {/* Header Section */}
-        <div className="mb-12 md:mb-20">
-          <span className="inline-block py-1 px-3 rounded-full bg-slate-100 dark:bg-white/5 border border-black/5 dark:border-white/10 text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-4">
+        <div className="mb-6 md:mb-20">
+          <span className="inline-block py-0.5 px-2 rounded-full bg-slate-100 dark:bg-white/5 border border-black/5 dark:border-white/10 text-[10px] md:text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-2 md:mb-4">
             ✨ Resume
           </span>
-          <h2 className="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white font-syne leading-tight mb-8">
+          <h2 className="text-2xl md:text-6xl font-extrabold text-slate-900 dark:text-white font-syne leading-tight mb-3 md:mb-8">
             Education and <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-600 dark:from-pink-300 dark:to-violet-300">
               leadership roles
             </span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed max-w-3xl font-medium border-l-4 border-violet-500 pl-6 italic">
+          <p className="hidden md:block text-slate-600 dark:text-slate-400 text-lg leading-relaxed max-w-3xl font-medium border-l-4 border-violet-500 pl-6 italic">
             "Education is the most powerful weapon which you can use to change the world." — Nelson Mandela
           </p>
         </div>
@@ -87,29 +87,29 @@ export default function Experience() {
             
             {/* Education Section - Horizontal Rows */}
             <div>
-                <h3 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-10 border-b border-slate-200 dark:border-white/10 pb-6 flex items-center gap-4">
+                <h3 className="text-lg md:text-4xl font-bold text-slate-900 dark:text-white mb-4 md:mb-10 border-b border-slate-200 dark:border-white/10 pb-3 md:pb-6 flex items-center gap-4">
                     My education
                 </h3>
                 
                 <div className="flex flex-col">
                      {education.map((item, index) => (
-                        <div key={item.id} className="group py-8 border-b border-slate-200 dark:border-white/10 grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+                        <div key={item.id} className="group py-4 md:py-8 border-b border-slate-200 dark:border-white/10 grid grid-cols-1 md:grid-cols-12 gap-1 md:gap-6 items-start">
                             {/* Date Column */}
                             <div className="md:col-span-3">
-                                <span className="text-lg font-medium text-slate-500 dark:text-slate-400 font-syne">{item.date}</span>
+                                <span className="text-xs md:text-lg font-medium text-slate-500 dark:text-slate-400 font-syne">{item.date}</span>
                             </div>
                             
                             {/* Main Info Column */}
                             <div className="md:col-span-5">
-                                <h4 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors font-syne">
+                                <h4 className="text-sm md:text-2xl font-bold text-slate-900 dark:text-white mb-1 md:mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors font-syne">
                                     {item.title}
                                 </h4>
-                                <p className="text-slate-700 dark:text-slate-300 font-medium mb-1">{item.institution}</p>
+                                <p className="text-slate-700 dark:text-slate-300 font-medium text-xs md:text-base mb-1">{item.institution}</p>
                             </div>
 
                             {/* Description Column */}
                             <div className="md:col-span-4">
-                                <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+                                <p className="hidden md:block text-slate-600 dark:text-slate-400 text-base leading-relaxed">
                                     {item.description}
                                 </p>
                             </div>
@@ -120,20 +120,20 @@ export default function Experience() {
 
             {/* Work Experience Section - Vertical List (Full Width) */}
             <div>
-                <h3 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-10 border-b border-slate-200 dark:border-white/10 pb-6">
+                <h3 className="text-lg md:text-4xl font-bold text-slate-900 dark:text-white mb-4 md:mb-10 border-b border-slate-200 dark:border-white/10 pb-3 md:pb-6">
                     Leadership Roles
                 </h3>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                      {workExperience.map((item, index) => (
-                        <div key={item.id} className="relative pl-8 md:pl-12 group">
+                        <div key={item.id} className="relative pl-5 md:pl-12 group">
                              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-slate-200 dark:bg-white/10 group-hover:bg-pink-500 transition-colors"></div>
-                             <span className={`absolute -left-[4px] top-2 w-2.5 h-2.5 rounded-full ${item.color} ring-4 ring-white dark:ring-[#0a0a0d]`}></span>
+                             <span className={`absolute -left-[4px] top-2 w-2 h-2 rounded-full ${item.color} ring-2 ring-white dark:ring-[#0a0a0d]`}></span>
                              
-                             <div className="bg-slate-50 dark:bg-white/5 p-6 rounded-2xl border border-slate-100 dark:border-white/10 hover:border-pink-500/30 transition-all hover:-translate-y-1">
-                                <span className="inline-block px-3 py-1 rounded-full bg-white dark:bg-black/20 text-xs font-bold text-slate-500 mb-4">{item.date}</span>
-                                <h4 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors font-syne">{item.role}</h4>
-                                <p className="text-slate-700 dark:text-slate-300 font-semibold text-sm mb-4">{item.company}</p>
-                                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{item.description}</p>
+                             <div className="bg-slate-50 dark:bg-white/5 p-3 md:p-6 rounded-xl md:rounded-2xl border border-slate-100 dark:border-white/10 hover:border-pink-500/30 transition-all hover:-translate-y-1">
+                                <span className="inline-block px-2 py-0.5 rounded-full bg-white dark:bg-black/20 text-[10px] md:text-xs font-bold text-slate-500 mb-2 md:mb-4">{item.date}</span>
+                                <h4 className="text-sm md:text-2xl font-bold text-slate-900 dark:text-white mb-1 md:mb-2 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors font-syne">{item.role}</h4>
+                                <p className="text-slate-700 dark:text-slate-300 font-semibold text-xs md:text-sm mb-1 md:mb-4">{item.company}</p>
+                                <p className="hidden md:block text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{item.description}</p>
                              </div>
                         </div>
                      ))}

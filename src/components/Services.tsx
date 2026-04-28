@@ -60,7 +60,7 @@ export default function Services() {
             </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-2 gap-3 md:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -73,18 +73,18 @@ export default function Services() {
                 damping: 12,
                 delay: index * 0.1 
               }}
-              className={`group glass-card rounded-[2.5rem] p-8 md:p-10 border border-black/5 dark:border-white/10 hover:bg-white/40 dark:hover:bg-white/5 transition-all relative overflow-hidden h-full flex flex-col justify-between ${service.border}`}
+              className={`group glass-card rounded-[1.5rem] md:rounded-[2.5rem] p-4 md:p-10 border border-black/5 dark:border-white/10 hover:bg-white/40 dark:hover:bg-white/5 transition-all relative overflow-hidden h-full flex flex-col justify-between ${service.border}`}
             >
               {/* Background Gradient */}
               <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${service.color} blur-[100px] rounded-full pointer-events-none -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700`}></div>
 
               <div>
-                  <h3 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6 font-syne">
+                  <h3 className="text-sm md:text-4xl font-bold text-slate-900 dark:text-white mb-2 md:mb-6 font-syne leading-tight">
                     {service.title}
                   </h3>
                   
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-8">
+                  <div className="hidden md:flex flex-wrap gap-2 mb-8">
                     {service.tags.map((tag) => (
                       <span key={tag} className="px-4 py-2 rounded-full bg-white/60 dark:bg-white/5 border border-black/5 dark:border-white/10 text-xs md:text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:bg-white/80 dark:group-hover:bg-white/10 transition-colors">
                         {tag}
@@ -92,17 +92,18 @@ export default function Services() {
                     ))}
                   </div>
 
-                  <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed font-medium mb-8 text-left md:text-justify hyphens-auto">
+                  <p className="hidden md:block text-slate-600 dark:text-slate-400 text-lg leading-relaxed font-medium mb-8 text-left md:text-justify hyphens-auto">
                     {service.description}
                   </p>
               </div>
 
               {/* Bottom Image / Illustration area */}
-              <div className="relative w-full aspect-[4/3] mt-4 rounded-3xl overflow-hidden border border-black/5 dark:border-white/5 bg-black/5 dark:bg-black/20"> 
+              <div className="relative w-full aspect-square md:aspect-[4/3] mt-2 md:mt-4 rounded-2xl md:rounded-3xl overflow-hidden border border-black/5 dark:border-white/5 bg-black/5 dark:bg-black/20"> 
                   <Image 
                       src={service.image} 
                       alt={service.title}
                       fill
+                      sizes="(max-width: 768px) 50vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-110" 
                   />
                    {/* Overlay for depth */}

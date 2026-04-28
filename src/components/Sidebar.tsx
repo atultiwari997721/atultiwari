@@ -17,6 +17,8 @@ export default function Sidebar() {
                 src="/assets/avatar.png" 
                 alt="Atul Tiwari"
                 fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 300px"
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
              />
         </div>

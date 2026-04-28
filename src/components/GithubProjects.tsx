@@ -94,23 +94,24 @@ export default function GithubProjects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-8 md:mb-16"
+          className="mb-5 md:mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-black/5 dark:border-white/10 text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-widest mb-4">
-            <Github size={14} className="text-violet-500 dark:text-violet-400" /> GitHub Projects
+          <span className="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-black/5 dark:border-white/10 text-[10px] md:text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-widest mb-2 md:mb-4">
+            <Github size={12} className="text-violet-500 dark:text-violet-400" /> GitHub Projects
           </span>
-          <h2 className="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight font-syne">
+          <h2 className="text-2xl md:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight font-syne">
             My Work on <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-pink-500 dark:from-violet-300 dark:to-pink-300">
               GitHub
             </span>
           </h2>
-          <p className="mt-4 text-slate-600 dark:text-slate-400 text-base md:text-lg font-medium max-w-2xl">
+          <p className="hidden md:block mt-4 text-slate-600 dark:text-slate-400 text-base md:text-lg font-medium max-w-2xl">
             Real projects I&apos;ve built and shipped — from AI tools to full-stack web apps.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        {/* Mobile: 2-col grid. Desktop: 2-col / 3-col grid */}
+        <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-6">
           {GITHUB_PROJECTS.map((project, index) => (
             <motion.div
               key={project.name}
@@ -118,53 +119,45 @@ export default function GithubProjects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08 }}
-              className="group glass-card rounded-[2rem] border border-black/5 dark:border-white/10 bg-white/50 dark:bg-white/5 hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col"
+              className="group glass-card rounded-[1.2rem] md:rounded-[2rem] border border-black/5 dark:border-white/10 bg-white/50 dark:bg-white/5 hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col"
             >
               {/* Gradient top bar */}
-              <div className={`h-1.5 w-full bg-gradient-to-r ${project.color}`} />
+              <div className={`h-1 md:h-1.5 w-full bg-gradient-to-r ${project.color}`} />
 
-              <div className="p-6 flex flex-col flex-1">
+              <div className="p-3 md:p-6 flex flex-col flex-1">
                 {/* Header */}
-                <div className="flex items-start justify-between mb-3">
-                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${project.color} flex items-center justify-center shadow-lg`}>
-                    <Code2 size={18} className="text-white" />
+                <div className="flex items-start justify-between mb-2 md:mb-3">
+                  <div className={`w-7 h-7 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-gradient-to-br ${project.color} flex items-center justify-center shadow-lg`}>
+                    <Code2 size={13} className="text-white" />
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1">
                     {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-full bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 transition-colors text-slate-600 dark:text-slate-300"
-                        title="Live Demo"
-                      >
-                        <Globe size={15} />
+                      <a href={project.live} target="_blank" rel="noopener noreferrer"
+                        className="p-1.5 rounded-full bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 transition-colors text-slate-600 dark:text-slate-300"
+                        title="Live Demo">
+                        <Globe size={12} />
                       </a>
                     )}
-                    <a
-                      href={project.repo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 transition-colors text-slate-600 dark:text-slate-300"
-                      title="GitHub Repo"
-                    >
-                      <Github size={15} />
+                    <a href={project.repo} target="_blank" rel="noopener noreferrer"
+                      className="p-1.5 rounded-full bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 transition-colors text-slate-600 dark:text-slate-300"
+                      title="GitHub Repo">
+                      <Github size={12} />
                     </a>
                   </div>
                 </div>
 
                 {/* Name */}
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 font-syne group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+                <h3 className="text-xs md:text-lg font-bold text-slate-900 dark:text-white mb-1 md:mb-2 font-syne group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors leading-tight">
                   {project.name}
                 </h3>
 
-                {/* Description */}
-                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed flex-1 mb-4">
+                {/* Description - hidden on mobile */}
+                <p className="hidden md:block text-slate-600 dark:text-slate-400 text-sm leading-relaxed flex-1 mb-4">
                   {project.description}
                 </p>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                {/* Tags - hidden on mobile */}
+                <div className="hidden md:flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span key={tag} className="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-xs font-semibold text-slate-600 dark:text-slate-300">
                       {tag}
@@ -173,33 +166,41 @@ export default function GithubProjects() {
                 </div>
 
                 {/* Language */}
-                <div className="flex items-center gap-2">
-                  <span className={`w-3 h-3 rounded-full ${LANG_COLORS[project.language] || "bg-slate-400"}`} />
-                  <span className="text-xs font-medium text-slate-500 dark:text-slate-400">{project.language}</span>
+                <div className="flex items-center gap-1.5 mt-auto pt-1 md:pt-0">
+                  <span className={`w-2 h-2 md:w-3 md:h-3 rounded-full ${LANG_COLORS[project.language] || "bg-slate-400"}`} />
+                  <span className="text-[10px] md:text-xs font-medium text-slate-500 dark:text-slate-400">{project.language}</span>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* View All on GitHub */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-10 text-center"
-        >
-          <a
-            href="https://github.com/atultiwari997721"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-lg hover:bg-slate-700 dark:hover:bg-slate-200 transition-all shadow-xl hover:-translate-y-1"
-          >
-            <Github size={22} />
-            View All on GitHub
-            <ExternalLink size={18} />
-          </a>
-        </motion.div>
+        {/* View All — horizontal sliding strip on mobile, centered button on desktop */}
+        <div className="mt-6 md:mt-10">
+          {/* Mobile: horizontal scroll strip */}
+          <div className="flex md:hidden overflow-x-auto gap-2 pb-2 no-scrollbar pr-4">
+            <a href="https://github.com/atultiwari997721" target="_blank" rel="noopener noreferrer"
+              className="flex-none flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-xs whitespace-nowrap shadow-lg">
+              <Github size={14} /> View All on GitHub <ExternalLink size={12} />
+            </a>
+            <a href="https://github.com/atultiwari997721?tab=repositories" target="_blank" rel="noopener noreferrer"
+              className="flex-none flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-violet-600 text-white font-bold text-xs whitespace-nowrap shadow-lg">
+              All Repositories →
+            </a>
+            <a href="https://github.com/atultiwari997721?tab=stars" target="_blank" rel="noopener noreferrer"
+              className="flex-none flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-white/10 dark:bg-white/5 border border-black/10 dark:border-white/10 text-slate-900 dark:text-white font-bold text-xs whitespace-nowrap">
+              ⭐ Starred
+            </a>
+          </div>
+          {/* Desktop: centered button */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="hidden md:flex justify-center">
+            <a href="https://github.com/atultiwari997721" target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-lg hover:bg-slate-700 dark:hover:bg-slate-200 transition-all shadow-xl hover:-translate-y-1">
+              <Github size={22} /> View All on GitHub <ExternalLink size={18} />
+            </a>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

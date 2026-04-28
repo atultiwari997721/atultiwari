@@ -31,7 +31,7 @@ export default function Projects({ onProjectClick }: ProjectsProps) {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+        <div className="grid grid-cols-2 gap-3 md:gap-10">
           {PROJECTS.map((project, index) => (
             <motion.div
               key={project.title}
@@ -45,30 +45,32 @@ export default function Projects({ onProjectClick }: ProjectsProps) {
                 delay: index * 0.1 
               }}
               onClick={() => onProjectClick?.(project)}
-              className={`group relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden aspect-square cursor-pointer bg-gradient-to-br ${project.accent} p-[1px]`}
+              className={`group relative rounded-[1.2rem] md:rounded-[2.5rem] overflow-hidden aspect-square cursor-pointer bg-gradient-to-br ${project.accent} p-[1px]`}
             >
-              <div className="absolute inset-[1px] rounded-[2rem] md:rounded-[2.5rem] bg-[#0f0f11]">
+              <div className="absolute inset-[1px] rounded-[1.2rem] md:rounded-[2.5rem] bg-[#0f0f11]">
               {/* Image */}
               <Image
                 src={project.image}
                 alt={project.title}
                 fill
+                sizes="(max-width: 768px) 50vw, 50vw"
                 className="object-cover object-top group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
               />
 
               {/* Overlay Content */}
-              <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <div className="absolute inset-x-0 bottom-0 p-3 md:p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                  <div className="flex justify-between items-end">
                     <div>
-                        <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-semibold text-white mb-2 border border-white/10">
+                        <span className="hidden sm:inline-block px-2 py-0.5 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-semibold text-white mb-1 border border-white/10">
                             {project.category}
                         </span>
-                        <h3 className="text-xl md:text-3xl font-bold text-white leading-tight font-syne">
+                        <h3 className="text-sm md:text-3xl font-bold text-white leading-tight font-syne">
                             {project.title}
                         </h3>
                     </div>
-                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center text-black opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110">
-                        <ArrowUpRight size={20} />
+                    <div className="w-7 h-7 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center text-black opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 shrink-0">
+                        <ArrowUpRight size={14} className="md:hidden" />
+                        <ArrowUpRight size={20} className="hidden md:block" />
                     </div>
                  </div>
               </div>
