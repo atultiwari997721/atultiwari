@@ -7,57 +7,68 @@ import PopIn from "@/components/anim/PopIn";
 const education = [
     {
         id: 1,
-        date: "2024 - 2028 (Pursuing)",
+        date: "Expected 07/2028",
         title: "B.Tech in Artificial Intelligence & Machine Learning",
-        institution: "IPS Academy, Indore",
-        description: "Currently pursuing B.Tech in AI & ML, exploring the frontiers of machine intelligence, deep learning, and modern web development.",
+        institution: "IES IPS Academy | Indore, Madhya Pradesh",
+        description: "Pursuing B.Tech in AI & ML. Exploring the frontiers of machine intelligence, deep learning, and modern web development.",
         color: "bg-violet-500",
-    },
-    {
-        id: 2,
-        date: "2024",
-        title: "Class 12th (PCM)",
-        institution: "Sarla Higher Secondary School, Maihar",
-        description: "Completed Higher Secondary Education in Physics, Chemistry & Mathematics. Scored 83%.",
-        color: "bg-blue-500",
-    },
-     {
-        id: 3,
-        date: "2022",
-        title: "Class 10th",
-        institution: "Sarla Higher Secondary School, Maihar",
-        description: "Completed High School Education. Scored 87%.",
-        color: "bg-pink-500",
     },
 ];
 
 const workExperience = [
   {
     id: 1,
-    role: "Baja Team Leader",
-    company: "IPS Academy, Indore",
-    date: "Present",
+    role: "Artificial Intelligence Intern",
+    company: "ABECSA Software Solutions | Indore, IN",
+    date: "03/2026 - Current",
     description:
-      "Leading the Baja SAE team — managing engineering design, team coordination, and competition preparation for the all-terrain vehicle project.",
+      "Developed NLP algorithms to analyze datasets. Engineered machine learning models for advanced data analysis (15% improvement in predictive accuracy). Visualized data using Tableau.",
     color: "bg-blue-500",
   },
   {
     id: 2,
-    role: "Class Representative",
-    company: "IPS Academy, Indore",
-    date: "2022 - Present",
+    role: "Full Stack Developer",
+    company: "ABECSA Software Solutions | Indore, IN",
+    date: "05/2025 - Current",
     description:
-      "Serving as the bridge between students and faculty, coordinating academic activities and resolving student grievances effectively.",
+      "Architected scalable web applications with MERN stack (25% faster load times). Engineered 10+ RESTful APIs. Collaborated in Agile sprints.",
     color: "bg-purple-500",
   },
   {
     id: 3,
-    role: "Software Club Head Member",
-    company: "IPS Academy, Indore",
-    date: "2023 - Present",
+    role: "Application Developer",
+    company: "PanVel & MS Cafe",
+    date: "01/2025 - 05/2025",
     description:
-      "Leading the Software Club, organizing hackathons, coding workshops, and fostering a culture of innovation and technical excellence on campus.",
+      "Built 3D interactive ordering web interface using Three.js (40% engagement boost). Architected core routing logic for ride-sharing mapping.",
     color: "bg-pink-500",
+  },
+  {
+    id: 4,
+    role: "Full Stack Developer",
+    company: "S-mart",
+    date: "10/2024 - 01/2025",
+    description:
+      "Automated repetitive workflows increasing team efficiency by 35%. Developed responsive front-end applications prioritizing mobile-first design.",
+    color: "bg-green-500",
+  },
+  {
+    id: 5,
+    role: "Independent Technical Consultant",
+    company: "Freelance | Indore, IN",
+    date: "06/2024 - Current",
+    description:
+      "Delivered 20+ custom web applications and management systems for educational institutes. Digitized administrative workflows (40% faster data processing).",
+    color: "bg-orange-500",
+  },
+  {
+    id: 6,
+    role: "Leadership & Involvement",
+    company: "IES IPS Academy",
+    date: "Present",
+    description:
+      "SAE BAJA Member, Head Boy (Student Body Representative).",
+    color: "bg-red-500",
   },
 ];
 
@@ -121,7 +132,7 @@ export default function Experience() {
             {/* Work Experience Section - Vertical List (Full Width) */}
             <div>
                 <h3 className="text-lg md:text-4xl font-bold text-slate-900 dark:text-white mb-4 md:mb-10 border-b border-slate-200 dark:border-white/10 pb-3 md:pb-6">
-                    Leadership Roles
+                    Work Experience
                 </h3>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                      {workExperience.map((item, index) => (

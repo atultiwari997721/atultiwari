@@ -17,9 +17,9 @@ export default function About({ cvOpen, setCvOpen }: AboutProps) {
         <PopIn>
         {/* Stats Row - Updated to match user request */}
         <div className="grid grid-cols-3 gap-3 md:gap-6 mb-6 md:mb-16">
-             <StatCard number="50+" label="Certifications" />
-             <StatCard number="1+" label="Experience" />
-             <StatCard number="10+" label="Projects" />
+             <StatCard number="20+" label="Custom Solutions" />
+             <StatCard number="3+" label="Years Experience" />
+             <StatCard number="6+" label="Certifications" />
         </div>
 
         {/* Content Layout - Split: Bio Text (Left) & Contact Details (Right) */}
@@ -43,13 +43,13 @@ export default function About({ cvOpen, setCvOpen }: AboutProps) {
                     <h2 className="text-[10px] md:text-sm font-bold text-violet-600 dark:text-violet-400 uppercase tracking-widest">Biography</h2>
                     <div className="space-y-2 md:space-y-6 text-slate-700 dark:text-slate-300 text-xs md:text-lg leading-relaxed font-medium text-justify hyphens-auto">
                         <p>
-                            Being an <span className="text-slate-900 dark:text-white font-bold">Undergrad Student</span> at <span className="text-slate-900 dark:text-white">IPS Academy</span>, I am currently exploring the field of <span className="text-slate-900 dark:text-white">Data Science</span> and <span className="text-slate-900 dark:text-white">Artificial Intelligence</span>.
+                            <span className="text-slate-900 dark:text-white font-bold">Dynamic Full Stack Developer</span> and <span className="text-slate-900 dark:text-white">AI/ML Engineer</span> specializing in the <span className="text-slate-900 dark:text-white">MERN stack</span> and data-driven applications.
                         </p>
                         <p className="hidden md:block">
-                            I have always been fascinated by the idea of how machines can learn and make decisions. This curiosity led me to explore the field of <span className="text-violet-600 dark:text-violet-300">Machine Learning</span> and <span className="text-violet-600 dark:text-violet-300">Deep Learning</span>.
+                            Proven ability to architect scalable web infrastructure, deploy machine learning models, and build 3D web interfaces. Successfully engineered and delivered <span className="text-violet-600 dark:text-violet-300">20+ custom software</span> and management solutions for educational institutes, optimizing administrative workflows and digitizing core infrastructure.
                         </p>
                         <p className="hidden md:block">
-                            I am a quick learner and always ready to learn new technologies. I strongly believe in the power of consistency and hard work.
+                            Adept at translating complex data into actionable technical solutions within Agile environments.
                         </p>
                     </div>
 

@@ -155,7 +155,7 @@ export default function Certificates() {
               <Award size={13} /> Google Drive ↗
             </a>
             <span className="flex-none flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-white/10 dark:bg-white/5 border border-black/10 dark:border-white/10 text-slate-900 dark:text-white font-bold text-xs whitespace-nowrap">
-              50+ Certificates
+              6+ Certificates
             </span>
         </div>
 

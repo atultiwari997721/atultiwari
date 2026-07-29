@@ -3,14 +3,14 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  { name: "Data Science", level: 90 },
-  { name: "Python", level: 85 },
-  { name: "Social Media Strategy", level: 95 },
-  { name: "Community Management", level: 90 },
-  { name: "Leadership", level: 88 },
-  { name: "Event Management", level: 85 },
-  { name: "Content Creation", level: 80 },
-  { name: "Public Speaking", level: 85 },
+  { name: "MERN Stack", level: 90 },
+  { name: "Python & AI/ML", level: 95 },
+  { name: "JavaScript (ES6+)", level: 95 },
+  { name: "React.js & Three.js", level: 90 },
+  { name: "Backend & REST APIs", level: 85 },
+  { name: "AWS & Docker", level: 85 },
+  { name: "MongoDB & SQL", level: 85 },
+  { name: "Java, C, C++", level: 80 },
 ];
 
 export default function Skills() {
